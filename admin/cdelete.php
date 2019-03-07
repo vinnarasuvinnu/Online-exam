@@ -1,7 +1,7 @@
 <?php
 include('db.php');
 $qid=$_POST['id'];
-$q1="delete from Test where tid='$qid'";
+$q1="delete from test where tid='$qid'";
 $res=mysqli_query($db,$q1);
 if($res){
 	echo "Test is deleted";

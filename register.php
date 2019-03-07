@@ -154,7 +154,7 @@
 	<div class="col-lg-12 d-none .d-none .d-sm-block">
 		<br><br><br><br>
 	</div>
-	<div class="row h-100 justify-content-center align-items-center" style="margin-top: 200px">
+	<div class="row h-100 justify-content-center align-items-center" style="margin-top: 100px">
 		<div class="col-lg-5" style="padding: 8% 0 0;">
       <br><br>
   <div class="form" >

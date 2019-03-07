@@ -243,7 +243,7 @@ Slider Section Start
                                 <option>Select your date</option>
                                 <?php 
                                 include('db.php');
-                                $q1="select distinct dateofT from Test";
+                                $q1="select distinct dateofT from test";
                                 $res=mysqli_query($db,$q1);
                                 while($row=mysqli_fetch_array($res)){
                                     ?>
@@ -373,7 +373,7 @@ About Section Start
                                         <select class="form-control" style="height: 40px;" name="qpid">
                                 <?php 
                                 include('db.php');
-                                $q1="select * from Paper";
+                                $q1="select * from paper";
                                 $res=mysqli_query($db,$q1);
                                 while($row=mysqli_fetch_array($res)){
                                     ?>
@@ -388,7 +388,7 @@ About Section Start
                                         <select class="form-control" style="height: 40px;" name="pid">
                                 <?php 
                                 include('db.php');
-                                $q1="select * from Passcode";
+                                $q1="select * from passcode";
                                 $res=mysqli_query($db,$q1);
                                 while($row=mysqli_fetch_array($res)){
                                     ?>

@@ -2,7 +2,7 @@
 include("db.php");
 $catval=$_POST['name'];
 //$catval=strtolower($catval);
-$q1="insert into Passcode(passcode)values('$catval')";
+$q1="insert into passcode(passcode)values('$catval')";
 
 $res=mysqli_query($db,$q1);
 if($res){

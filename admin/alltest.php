@@ -3,7 +3,7 @@
 
 include('db.php');
 $val=$_POST['val'];
-$q1="select * from Test where dateofT='$val'";
+$q1="select * from test where dateofT='$val'";
 $res=mysqli_query($db,$q1);
 $out=array();
 //echo json_encode($out= array('val' => $val ));

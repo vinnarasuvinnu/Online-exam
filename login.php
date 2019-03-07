@@ -147,7 +147,7 @@
                alert(data); // show response from the php script.
             }
             else{
-              location.href="question.php";
+              location.href="ins.php";
             }
            }
          });

@@ -10,7 +10,7 @@ $ans=$_POST['ans'];
 $qpid=$_POST['qpid'];
 $qid=$_POST['eid'];
 
-$q1="update Questions set qp_id='$qpid',opt1='$opt1',opt1='$opt1',opt2='$opt2',opt3='$opt3',opt4='$opt4',ans='$ans' where q_id='$qid'";
+$q1="update questions set qp_id='$qpid',opt1='$opt1',opt1='$opt1',opt2='$opt2',opt3='$opt3',opt4='$opt4',ans='$ans' where q_id='$qid'";
 $res=mysqli_query($db,$q1);
 if($res){
 	echo "Your question is updated";

@@ -4,7 +4,7 @@ echo '<body style="background-color:#0e3997">';
 $qpid=$_SESSION['qpid'];
 $uid=$_SESSION['uid'];
 include('admin/db.php');
-$q1="select * from Questions where qp_id='$qpid'";
+$q1="select * from questions where qp_id='$qpid'";
 
 $res=mysqli_query($db,$q1);
 if($res){

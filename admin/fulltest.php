@@ -4,7 +4,7 @@ include('db.php');
 $qpid=$_POST['val'];
 	$i=0;
 
-$q2="select ans from Questions where qp_id='$qpid'";
+$q2="select ans from questions where qp_id='$qpid'";
 	$result=mysqli_query($db,$q2);
 	$output=array();
 
