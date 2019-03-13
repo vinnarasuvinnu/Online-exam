@@ -165,14 +165,25 @@
       <input type="password" placeholder="Create Password" name="password" />
       <input type="text" placeholder="Class 10th Marks" name="class_ten" />
       <input type="text" placeholder="Class 12th Marks" name="class_twelve" />
-      <div class="row">
-        <div class="col-md-6">
-      <input type="radio" value="male" name="gender">Male
+     <!--  <div class="row">
+        <div class="col-md-6 text-center">
+          <div class="row">
+            Male
+      <input type="radio" value="male" name="gender">
     </div>
-    <div class="col-md-6">
-            <input type="radio" value="female" name="gender">Female
+    </div>
+    <div class="col-md-6 text-center">
+      <div class="row text-center">
+        Female
+            <input type="radio" value="female" name="gender">
           </div>
-        </div>
+          </div>
+        </div> -->
+        <label>Select your gender</label>
+        <select class="form-control" name="gender">
+          <option>male</option>
+          <option>female</option>
+        </select>
 
             <br><br>
 

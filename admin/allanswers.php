@@ -157,7 +157,7 @@ Slider Section Start
                                 <option>Select your Question paper</option>
                                 <?php 
                                 include('db.php');
-                                $q1="select * from Paper";
+                                $q1="select * from paper";
                                 $res=mysqli_query($db,$q1);
                                 while($row=mysqli_fetch_array($res)){
                                     ?>

@@ -19,6 +19,17 @@ $time=$_SESSION['time'];
 		height:100%;
 		background: #0e3997;
 	}
+	  span {
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    margin: 6px;
+    background-color: #555;
+    color: white;
+    font-size: 20;
+    font-weight: bold;
+    padding: 20px;
+  }
 	.button {
 		background-color: #4881ff;
 		border: none;
@@ -47,7 +58,7 @@ $time=$_SESSION['time'];
 	}
 </style>
 <script type="text/javascript">
-
+var seconds;
 function Check(){
 	var count=0;
 
@@ -66,11 +77,11 @@ $q1="select * from questions where qp_id='$qpid'";
 
 
 					if(val === undefined){ 
-$('#'+tofix).css("border", "1px solid red");
+$('#'+tofix+"span").css("background-color", "red");
 	count++;
 }
 else{
-$('#'+tofix).css("border", "1px solid green");
+$('#'+tofix+"span").css("background-color", "green");
 
 }
 
@@ -81,7 +92,10 @@ $('#'+tofix).css("border", "1px solid green");
 
 
 ?>
-if(count>0){
+if(seconds==0){
+	return true;
+}
+else if(count>0){
 	return false;
 }
 else{
@@ -91,7 +105,7 @@ else{
 }
 
 
-	var seconds = <?php echo $time; ?>;
+	seconds = <?php echo $time; ?>;
 	//var seconds=10;
 	var i=0;
 	function secondPassed() {
@@ -107,6 +121,7 @@ else{
 			clearInterval(countdownTimer);
              //form1 is your form name
              $('#sub1').click();
+
 
          } else {
          	seconds--;
@@ -151,7 +166,6 @@ else{
 		<div class="col-lg-8"  style="background: #fff !important; box-shadow: 0px 8px 15px #0e2351; padding: 40px; margin-top: 80px">
 			<h4 style="font-weight: bold">Attempt all the questions, there is no negative marking for this Test</h4>
 
-
 			<form action="submitform.php" method="post" id="test" onsubmit="return Check()">
 				<?php
 				include('admin/db.php');
@@ -162,6 +176,8 @@ else{
 
 
 				?>
+				<div class="row">
+					<div class="col-lg-8 col-sm-8">
 				<div id="<?php echo $row['q_id']; ?>" style="padding: 20px">
 				<h5 style="font-weight: bold">Q<?php echo $i; ?>. <?php echo $row['q_name'];?> ?</h5>
 				<input type="radio" name="<?php echo $row['q_id']; ?>" value="<?php echo $row['opt1']; ?>">&nbsp;&nbsp;<?php echo $row['opt1']; ?><br>
@@ -171,6 +187,12 @@ else{
 				<input type="hidden" name="questionid" value="<?php echo $row['q_id']; ?>">
 				<br>
 			</div>
+		</div>
+		<div class="col=lg-4 col-sm-4">
+			<span class="rounded-circle text-center" id="<?php echo $row['q_id'];?>span"><?php echo $i; ?></span>
+
+		</div>
+	</div>
 			<br>
 				<?php
 				$i++;
