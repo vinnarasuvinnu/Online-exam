@@ -1,4 +1,10 @@
+<?php
 
+include('db.php');
+$q1="select * from test";
+$res=mysqli_query($db,$q1);
+$row=mysqli_fetch_array($res);
+?>
 
 <!DOCTYPE html>
 <html class="no-js">
@@ -60,6 +66,8 @@
 
 
     $(document).ready(function(){
+    var mark=parseInt("<?php echo $row['mark'] ?>");
+
         var table=$('#example').DataTable();
         $('#sel').change(function(event) {
             table.clear().draw();
@@ -74,17 +82,30 @@
         data=data.result;
         console.log(data);
     $.each(data, function(key,value) {
+        var color="";
+        var result="";
+        var marks=value.marks;
+
+        if(marks < mark){
+            result="fail";
+            color="red";
+        }
+        else{
+            result="pass";
+            color="green";
+        }
 
 
 
             table.row.add($(
-    '<tr>' +
+    '<tr style="background-color:'+color+'">' +
     '<td>'+value.username+'</td>' +
         '<td>'+value.all+'</td>' +
     '<td>'+value.atten+'</td>' +
     '<td>'+value.correct+'</td>' +
     '<td>'+value.wrong+'</td>' +
     '<td>'+value.marks+'</td>' +
+    '<td>'+result+'</td>' +
 
 
  
@@ -189,7 +210,7 @@ Slider Section Start
                  <th>Correct</th>
                 <th>Wrong</th>
                  <th>Marks</th>
-           
+                    <th>Result</th>
                 
               
             </tr>

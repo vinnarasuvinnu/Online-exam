@@ -120,6 +120,13 @@
                                                     <label>Time Limit(only minutes)</label>
                                                     <input type="text" name="time" class="form-control" required>
                                                     </div>
+
+
+
+                                                    <div class="text-center">
+                                                    <label>Pass mark</label>
+                                                    <input type="text" name="mark" class="form-control" required>
+                                                    </div>
                                                             <br>
                                                             <div class="text-center">
                                                                 <input type="submit" name='submit' value="Add Test" class="btn btn-primary text-center" >
