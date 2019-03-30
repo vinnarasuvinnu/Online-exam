@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 13, 2019 at 08:47 PM
+-- Generation Time: Mar 31, 2019 at 12:04 AM
 -- Server version: 5.7.25-0ubuntu0.18.04.2
 -- PHP Version: 7.2.15-0ubuntu0.18.04.1
 
@@ -38,7 +38,7 @@ CREATE TABLE `answer` (
 --
 
 INSERT INTO `answer` (`aid`, `selectedanswer`, `uid`, `qid`) VALUES
-(1, '{\"result\":[\"9\"]}', 8, 17);
+(4, '{\"result\":[\"1/71\",\"3\",\"11\"]}', 8, 15);
 
 -- --------------------------------------------------------
 
@@ -173,15 +173,16 @@ CREATE TABLE `test` (
   `dateofT` date NOT NULL,
   `etime` varchar(100) NOT NULL,
   `qp_id` int(11) NOT NULL,
-  `pc_id` int(11) NOT NULL
+  `pc_id` int(11) NOT NULL,
+  `mark` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `test`
 --
 
-INSERT INTO `test` (`tid`, `testname`, `dateofT`, `etime`, `qp_id`, `pc_id`) VALUES
-(11, 'exam2', '2019-03-29', '60', 17, 1);
+INSERT INTO `test` (`tid`, `testname`, `dateofT`, `etime`, `qp_id`, `pc_id`, `mark`) VALUES
+(12, 'supertest', '2019-03-30', '30', 15, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -284,7 +285,7 @@ ALTER TABLE `userregister`
 -- AUTO_INCREMENT for table `answer`
 --
 ALTER TABLE `answer`
-  MODIFY `aid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `aid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `catogery`
 --
@@ -314,7 +315,7 @@ ALTER TABLE `register`
 -- AUTO_INCREMENT for table `test`
 --
 ALTER TABLE `test`
-  MODIFY `tid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `tid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `userregister`
 --
